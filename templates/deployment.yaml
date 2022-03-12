@@ -40,7 +40,7 @@ spec:
                 name: {{ .Values.dbSecretName }}
                 key: password
           - name: POSTGRES_DB_URL
-            value: {{ .Values.dbUrl }}
+            value: {{ include "db.url" . }}
           ports:
             - name: api
               containerPort: {{ .Values.service.port }}

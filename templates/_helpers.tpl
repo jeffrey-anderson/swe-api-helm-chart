@@ -24,6 +24,17 @@ If release name contains chart name it will be used as a full name.
 {{- end }}
 
 {{/*
+Determine the JDBC URL based on if the database is also being installed
+*/}}
+{{- define "db.url" -}}
+{{- if .Values.installSweDb -}}
+{{- printf "jdbc:postgresql://%s-swe-db:5432/postgres" .Release.Name }}
+{{- else }}
+{{- required "dbUrl must be set when installSweDb=false" .Values.dbUrl }}
+{{- end }}
+{{- end }}
+
+{{/*
 Create chart name and version as used by the chart label.
 */}}
 {{- define "swe-api.chart" -}}

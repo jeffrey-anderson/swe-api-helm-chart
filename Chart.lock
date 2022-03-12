@@ -1,0 +1,6 @@
+dependencies:
+- name: swe-db
+  repository: https://jeffrey-anderson.github.io/helm-charts/
+  version: 0.1.0
+digest: sha256:a0ac53a6a5df5667a626f739ef5ea4eadff8a789ace6db6985603ead61aa11e5
+generated: "2022-03-12T12:59:55.350084786-05:00"

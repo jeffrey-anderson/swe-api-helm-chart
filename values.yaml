@@ -2,6 +2,13 @@
 # This is a YAML-formatted file.
 # Declare variables to be passed into your templates.
 
+# True to install the dependent swe-db database dependency
+installSweDb: true
+
+# If installSweDb = false, set dbUrl to the proper value so the
+# API can connect to the database:
+# dbUrl: jdbc:postgresql://perky-porcupine-swe-db:5432/postgres
+
 replicaCount: 1
 
 image:
@@ -11,7 +18,6 @@ image:
   tag: ""
 
 dbSecretName: "postgres-db-password"
-dbUrl: jdbc:postgresql://perky-porcupine-swe-db:5432/postgres
 
 imagePullSecrets: []
 nameOverride: ""
