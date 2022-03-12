@@ -75,10 +75,10 @@ See the [swe-db README](https://github.com/jeffrey-anderson/swe-db-helm-chart/bl
 
 ### Overriding via the Command Line
 
-Specify each parameter using the `--set key=value[,key=value]` argument to `helm install`. For example,
+Specify each parameter using the `--set key=value[,key=value]` argument to `helm install`. For example, to install the chart and prepopulate the database with some sample data:
 
 ```console
-helm install audacious-apple --set dbUrl=jdbc:postgresql://another-release-swe-db:5432/postgres jeffs-charts/swe-api
+helm install audacious-apple jeffs-charts/swe-api --set swe-db.initContainers.runInit=true
 ```
 
 ### Overriding via a YAML File
