@@ -27,5 +27,5 @@ appVersion: "0.1"
 dependencies:
   - name: swe-db
     version: ^0.1
-    condition: swe-db.enabled
+    condition: installSweDb
     repository: https://jeffrey-anderson.github.io/helm-charts/

@@ -14,12 +14,12 @@ helm repo add jeffs-charts https://jeffrey-anderson.github.io/helm-charts/
 
 Install the chart and the [database](https://github.com/jeffrey-anderson/swe-db-helm-chart):
 ```console
-helm install audacious-apple jeffs-charts/swe-api
+helm install my-api-release jeffs-charts/swe-api
 ```
 
 Install the chart and use an externally provided PostgreSQL database:
 ```console
-helm install audacious-apple jeffs-charts/swe-api --set installSweDb=false --set dbUrl=jdbc:postgresql://<some-db-server-address>:5432/postgres
+helm install my-api-release jeffs-charts/swe-api --set installSweDb=false --set dbUrl=jdbc:postgresql://<some-db-server-address>:5432/postgres
 ```
 
 ## Prerequisites
@@ -31,19 +31,19 @@ helm install audacious-apple jeffs-charts/swe-api --set installSweDb=false --set
 
 ## Installing the Chart
 
-To install the chart with the release name `audacious-apple`:
+To install the chart with the release name `my-api-release`:
 
 ```console
-helm install audacious-apple jeffs-charts/swe-api
+helm install my-api-release jeffs-charts/swe-api
 ```
 
 
 ## Uninstalling the Chart
 
-To uninstall/delete the `audacious-apple` deployment:
+To uninstall/delete the `my-api-release` deployment:
 
 ```console
-helm delete audacious-apple
+helm delete my-api-release
 ```
 
 The command removes all the Kubernetes components associated with the chart and deletes the release.
@@ -78,7 +78,7 @@ See the [swe-db README](https://github.com/jeffrey-anderson/swe-db-helm-chart/bl
 Specify each parameter using the `--set key=value[,key=value]` argument to `helm install`. For example, to install the chart and prepopulate the database with some sample data:
 
 ```console
-helm install audacious-apple jeffs-charts/swe-api --set swe-db.initContainers.runInit=true
+helm install my-api-release jeffs-charts/swe-api --set swe-db.initContainers.runInit=true
 ```
 
 ### Overriding via a YAML File
@@ -86,7 +86,7 @@ helm install audacious-apple jeffs-charts/swe-api --set swe-db.initContainers.ru
 Alternatively, a YAML file that specifies the values for the above parameters can be provided while installing the chart. For example,
 
 ```console
-helm install audacious-apple -f values.yaml jeffs-charts/swe-api
+helm install my-api-release -f values.yaml jeffs-charts/swe-api
 ```
 
 > **Tip**: You can use the default [values.yaml](values.yaml).
